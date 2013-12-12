@@ -25,3 +25,5 @@ horizontallistview/bin
 horizontallistview/gen
 sample/bin
 sample/gen
+
+*/.settings/*

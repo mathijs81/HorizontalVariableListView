@@ -215,6 +215,10 @@ public class HListView extends AbsHListView {
 
 	}
 
+	public void setMeasureWithChild(int measureWithChild) {
+		mMeasureWithChild = measureWithChild;
+	}
+
 	/**
 	 * @return The maximum amount a list view will scroll in response to an arrow event.
 	 */
