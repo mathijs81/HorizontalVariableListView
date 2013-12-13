@@ -632,7 +632,7 @@ public abstract class AbsHListView extends AdapterView<ListAdapter> implements V
 		
 		TypedArray array = null;
 		
-		int[] styleableArray = getFieldFromStyleable( context, "AbsHListView" );
+		int[] styleableArray = R.styleable.AbsHListView; 
 		
 		if( null != styleableArray ) {
 			array = context.obtainStyledAttributes( attrs, styleableArray, defStyle, 0 );
@@ -5776,28 +5776,4 @@ public abstract class AbsHListView extends AdapterView<ListAdapter> implements V
 			return null;
 		}
 	}
-	
-	/*********************************************************************************
-	*   Returns the resource-IDs for all attributes specified in the
-	*   given <declare-styleable>-resource tag as an int array.
-	*
-	*   @param  context     The current application context.
-	*   @param  name        The name of the <declare-styleable>-resource-tag to pick.
-	*   @return             All resource-IDs of the child-attributes for the given
-	*                       <declare-styleable>-resource or <code>null</code> if
-	*                       this tag could not be found or an error occured.
-	*********************************************************************************/
-	@SuppressWarnings ( "unchecked" )
-	public static final <T> T getFieldFromStyleable( Context context, String name ) {
-		try {
-			// use reflection to access the resource class
-			Field field = Class.forName( context.getPackageName() + ".R$styleable" ).getField( name );
-			if ( null != field ) {
-				return (T) field.get( null );
-			}
-		} catch ( Throwable t ) {
-			t.printStackTrace();
-		}
-		return null;
-	}	
 }
